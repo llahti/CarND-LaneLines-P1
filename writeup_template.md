@@ -67,11 +67,16 @@ From image we can see that there are quite few lines found and we take care of t
 This step reduces all lines to left and right lines as seen in image below.
 This is done by first sorting lines to left and right pairs.
 Then extrapolating those to extend from apex to bottom of image.
-After that lines are averaged and for video stream there is rolling average filter to reduce line shaking.
+
 ![Line Extrapolation and Averaging][image8]
 
+####7. Line averaging
+Then  lines are averaged and for video stream there is rolling average filter to reduce line shaking.
+
 ####7. Augment to Image or Video Stream
-Extrapolated and averaged lines are then augmented to image/video stream. Basically it is just to combining the original image with image which contains extrapolated and averaged lines.
+Averaged lines are then augmented to image/video stream. Basically it is just to combining the original image with image which contains extrapolated and averaged lines.
+
+![Annotated Image][image2]
 
 
 ###2. Identify potential shortcomings with your current pipeline
@@ -90,4 +95,5 @@ There are several shortcomings what i could think of.
 - Defining ROI in fine details
 ![Proposed ROI definition][image9]
 - Also would be nice if ROI could be adjusted on the fly
+- Detect which areas are outside of the road
 
