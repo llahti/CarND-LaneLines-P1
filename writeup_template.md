@@ -10,11 +10,20 @@ The goals / steps of this project are the following:
 * Reflect on your work in a written report
 * Briefly the goal is to annotate video with lane marks
 
+
 [image1]: ./test_images/solidWhiteCurve.jpg "Original image"
-
 [image2]: ./test_images/solidWhiteCurve_7_final.jpg "Annotated Image"
+[image3]: ./test_images/solidWhiteCurve_1_grayscale.jpg "Grayscaled Image"
+[image4]: ./test_images/solidWhiteCurve_2_blurred.jpg "Blurred Image"
+[image5]: ./test_images/solidWhiteCurve_3_edges.jpg "Edged detected"
+[image6]: ./test_images/solidWhiteCurve_4_roi.jpg "Region of Interest Defined"
+[image7]: ./test_images/solidWhiteCurve_5_houghlines.jpg "Lines Detected"
+[image8]: ./test_images/solidWhiteCurve_6_extrapolated.jpg "Lines Averaged and Extrapolated"
 
+
+**Original Image**
 ![Original Image][image1]
+**Annotated Image**
 ![Annotated Image][image2]
 
 ---
@@ -31,9 +40,15 @@ Starting point is the original image such as
 
 ####1. Convert image to grayscale
 First step is to convert image to grayscale as it will make image processing faster and it is easier to apply different type of image manipulation techniques. 
+![Image converted to grayscale image][image3]
 
-[image102]: ./test_images/solidWhiteCurve_1_grayscale.jpg "Grayscaled Image"
+####2. Smooth Image
+In order to get rid of small anomalies in image it is better to smooth it certain amount. I used kernel size 9 for smoothing.
+Resulting image looks bit blurred (as it should) and from that we are able to find edges.
+![Smoothed Image][image4]
 
+
+---
 My pipeline consisted of 5 steps. First, I converted the images to grayscale, then I .... 
 
 In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
