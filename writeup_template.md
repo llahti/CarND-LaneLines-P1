@@ -14,6 +14,9 @@ The goals / steps of this project are the following:
 
 [image2]: ./test_images/solidWhiteCurve_7_final.jpg "Annotated Image"
 
+![Original Image][image1]
+![Annotated Image][image2]
+
 ---
 
 ### Reflection
