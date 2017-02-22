@@ -47,15 +47,27 @@ In order to get rid of small anomalies in image it is better to smooth it certai
 Resulting image looks bit blurred (as it should) and from that we are able to find edges.
 ![Smoothed Image][image4]
 
+####3. Detect Edges From Image
+Before we can detect lines from image we need to detect edges. Edge detection produces following type of image.
+![Edges Detected][image5]
 
----
-My pipeline consisted of 5 steps. First, I converted the images to grayscale, then I .... 
+####4. Define Region of Interest
+This step is also needed before detecting lines, because we are only interested in finding lines from the area from which we're able to find lane lines. If we don't define ROI then our lane detection detects all possible lines.
+![Define Region Of Interest][image6]
 
-In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
 
-If you'd like to include images to show how the pipeline works, here is how to include an image: 
+####5. Detect Lines
+Now is time to detect lines from image. Our image is already in condition that most probably we are able to find lane lines.
+We are using hough transformation to detect lines from image.
+From image we can see that there are quite few lines found and we take care of those on next step.
+![Lines Detected][image7]
 
-![alt text][image1]
+####6. Line Extrapolation and Averaging
+This step reduces all lines to left and right lines as seen in image below.
+This is done by first sorting lines to left and right pairs.
+Then extrapolating those to extend from apex to bottom of image.
+After that lines are averaged and for video stream there is rolling average filter to reduce line shaking.
+![Line Extrapolation and Averaging][image2]
 
 
 ###2. Identify potential shortcomings with your current pipeline
