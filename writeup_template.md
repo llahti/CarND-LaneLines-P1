@@ -19,6 +19,7 @@ The goals / steps of this project are the following:
 [image6]: ./test_images/solidWhiteCurve_4_roi.jpg "Region of Interest Defined"
 [image7]: ./test_images/solidWhiteCurve_5_houghlines.jpg "Lines Detected"
 [image8]: ./test_images/solidWhiteCurve_6_extrapolated.jpg "Lines Averaged and Extrapolated"
+[image9]: ./images_for_writeup/proposed_roi.jpg "New proposed ROI"
 
 
 **Original Image**
@@ -67,19 +68,26 @@ This step reduces all lines to left and right lines as seen in image below.
 This is done by first sorting lines to left and right pairs.
 Then extrapolating those to extend from apex to bottom of image.
 After that lines are averaged and for video stream there is rolling average filter to reduce line shaking.
-![Line Extrapolation and Averaging][image2]
+![Line Extrapolation and Averaging][image8]
+
+####7. Augment to Image or Video Stream
+Extrapolated and averaged lines are then augmented to image/video stream. Basically it is just to combining the original image with image which contains extrapolated and averaged lines.
 
 
 ###2. Identify potential shortcomings with your current pipeline
 
-
-One potential shortcoming would be what would happen when ... 
-
-Another shortcoming could be ...
+There are several shortcomings what i could think of.
+- Sensitivity to lighting changes within image
+- If lane lines are close to the road edge then it is highly possible that the road edge will de detected as well
+- Objects such as cars or road markings within region of interest could mess up line detection
+- Highly curved lane markings could be ignored by algorithm
+- Rolling average algorighm can't handle "null" values
 
 
 ###3. Suggest possible improvements to your pipeline
 
-A possible improvement would be to ...
+- Pipeline should be better on adapting to changing lighting conditions
+- Defining ROI in fine details
+![Proposed ROI definition][image9]
+- Also would be nice if ROI could be adjusted on the fly
 
-Another potential improvement could be to ...
