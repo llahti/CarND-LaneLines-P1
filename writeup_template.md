@@ -88,6 +88,7 @@ There are several shortcomings what i could think of.
 - Highly curved lane markings could be ignored by algorithm
 - Rolling average algorighm can't handle "null" values
 
+As we can see from the challenge video this current pipeline is not working reliably and needs modifications.
 
 ###3. Suggest possible improvements to your pipeline
 
@@ -96,4 +97,6 @@ There are several shortcomings what i could think of.
 ![Proposed ROI definition][image9]
 - Also would be nice if ROI could be adjusted on the fly
 - Detect which areas are outside of the road
+- Also there could be possibility to use color information to make pipeling better on adapting different conditions
+- Contrast and brighness modifications could be tried as well.
 
