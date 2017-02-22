@@ -8,17 +8,28 @@
 The goals / steps of this project are the following:
 * Make a pipeline that finds lane lines on the road
 * Reflect on your work in a written report
+* Briefly the goal is to annotate video with lane marks
 
+[image1]: ./test_images/solidWhiteCurve.jpg "Original image"
 
-[//]: # (Image References)
-
-[image1]: ./examples/grayscale.jpg "Grayscale"
+[image2]: ./test_images/solidWhiteCurve_7_final.jpg "Annotated Image"
 
 ---
 
 ### Reflection
 
-###1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
+###1. Pipeline Description
+
+My pipeline is bit modified version of suggested pipeline as i have created few extra functions to help on task.
+Anyhow the general principle should follow quite well the suggested principle. Below is description of pipeline step by step.
+
+Starting point is the original image such as 
+![Original Image][image1]
+
+####1. Convert image to grayscale
+First step is to convert image to grayscale as it will make image processing faster and it is easier to apply different type of image manipulation techniques. 
+
+[image102]: ./test_images/solidWhiteCurve_1_grayscale.jpg "Grayscaled Image"
 
 My pipeline consisted of 5 steps. First, I converted the images to grayscale, then I .... 
 
